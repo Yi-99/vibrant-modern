@@ -22,8 +22,8 @@ export default function Nav() {
         ))}
       </ul>
       <div className="flex items-center gap-3">
-        <a href="#" className="hidden sm:block text-[15px] font-semibold">Log in →</a>
-        <a href="#" className="btn-primary bg-ink text-paper px-5 py-2.5 rounded-full font-semibold text-[14px] hover:bg-orange transition-colors">
+        <a href="#signin" className="hidden sm:block text-[15px] font-semibold">Log in →</a>
+        <a href="#signup" className="btn-primary bg-ink text-paper px-5 py-2.5 rounded-full font-semibold text-[14px] hover:bg-orange transition-colors">
           Start a streak
         </a>
       </div>

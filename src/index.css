@@ -112,6 +112,33 @@ body {
   background-size: 14px 14px;
 }
 
+/* Auth: slide-in from right */
+@keyframes slideIn { from { transform: translateX(28px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+.slide-in { animation: slideIn 0.45s cubic-bezier(.2,.7,.2,1) both; }
+
+/* Auth: shake on error */
+@keyframes shake { 0%,100% { transform: translateX(0); } 20%,60% { transform: translateX(-6px); } 40%,80% { transform: translateX(6px); } }
+.shake { animation: shake 0.4s ease-in-out; }
+
+/* Auth: pop (checkmark, confetti) */
+@keyframes pop { 0% { transform: scale(0); } 60% { transform: scale(1.15); } 100% { transform: scale(1); } }
+.pop { animation: pop 0.5s cubic-bezier(.2,.9,.3,1.4) both; }
+
+/* Auth: caret blink */
+@keyframes blink { 50% { opacity: 0; } }
+.caret { animation: blink 1s steps(2) infinite; }
+
+/* Auth: spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 1s linear infinite; }
+
+/* Auth: input field */
+.field { transition: border-color .2s, background .2s, transform .2s; }
+.field:focus-within { border-color: #FF5A1F; }
+
+/* Auth: card shadow */
+.auth-card { box-shadow: 8px 8px 0 #0A0A0A; }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb { background: #0A0A0A; border-radius: 999px; }
