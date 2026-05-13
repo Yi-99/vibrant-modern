@@ -29,7 +29,7 @@ export default function SidePanel({ mode }) {
 
       <div className="absolute top-6 right-6 z-10 flex flex-col gap-2 items-end">
         <div className="floaty tag bg-lime text-ink !border-lime">+1 streak day</div>
-        <div className="floaty-2 tag bg-orange text-paper !border-orange">PR · 22:14</div>
+        <div className="floaty-2 tag text-paper font-bold" style={{ background: '#FF5A1F', borderColor: '#FF5A1F' }}>PR · 5K @ 22:14</div>
       </div>
 
       <div className="relative z-10">

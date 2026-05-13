@@ -103,7 +103,7 @@ body {
 .btn-primary:hover::before { transform: translateX(120%); }
 
 /* Sticky-outline tag */
-.tag { border: 1.5px solid #0A0A0A; border-radius: 999px; padding: 6px 12px; font-weight: 600; font-size: 12px; letter-spacing: .02em; background: #FAFAF7; }
+.tag { border: 1.5px solid #0A0A0A; border-radius: 999px; padding: 6px 12px; font-weight: 600; font-size: 12px; letter-spacing: .02em; background-color: var(--color-paper); }
 
 /* Smaller dot bg for inset cards */
 .dots-inset {
