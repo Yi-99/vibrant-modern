@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0A0A0A;
+  --color-paper: #FAFAF7;
+  --color-orange: #FF5A1F;
+  --color-orange-500: #FF5A1F;
+  --color-orange-600: #E84A0F;
+  --color-lime: #D9F26B;
+  --color-lime-500: #D9F26B;
+  --color-lime-600: #BFE039;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html, body {
+  background: #FAFAF7;
+  color: #0A0A0A;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(10,10,10,0.13) 1px, transparent 0);
+  background-size: 22px 22px;
+  background-attachment: fixed;
+}
+
+.font-display {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-variation-settings: 'wdth' 95, 'opsz' 96;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+}
+
+.font-narrow {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  font-variation-settings: 'wdth' 75, 'opsz' 96;
+  letter-spacing: -0.02em;
+}
+
+/* Marquee */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 28s linear infinite; }
+
+/* Spin slow */
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 14s linear infinite; }
+
+/* Bounce subtle */
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.floaty { animation: floaty 3.6s ease-in-out infinite; }
+.floaty-2 { animation: floaty 4.4s ease-in-out infinite; animation-delay: -1.2s; }
+
+/* Shimmer line under progress */
+@keyframes shimmer { 0% { transform: translateX(-30%); } 100% { transform: translateX(130%); } }
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.55) 50%, transparent 100%);
+  transform: translateX(-30%);
+  animation: shimmer 2.4s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}
+
+/* Diagonal stripes for "ghost" sections of bar */
+.stripes {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(10,10,10,0.06) 0 8px,
+    rgba(10,10,10,0.0) 8px 16px
+  );
+}
+
+/* Reveal-up on entry */
+@keyframes rise { from { transform: translateY(28px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.rise-1 { animation: rise 0.9s 0.05s cubic-bezier(.2,.7,.2,1) both; }
+.rise-2 { animation: rise 0.9s 0.20s cubic-bezier(.2,.7,.2,1) both; }
+.rise-3 { animation: rise 0.9s 0.35s cubic-bezier(.2,.7,.2,1) both; }
+.rise-4 { animation: rise 0.9s 0.50s cubic-bezier(.2,.7,.2,1) both; }
+.rise-5 { animation: rise 0.9s 0.65s cubic-bezier(.2,.7,.2,1) both; }
+
+/* Pulse dot */
+@keyframes pulseDot { 0% { box-shadow: 0 0 0 0 rgba(255,90,31,0.6); } 70% { box-shadow: 0 0 0 14px rgba(255,90,31,0); } 100% { box-shadow: 0 0 0 0 rgba(255,90,31,0); } }
+.pulse-dot { animation: pulseDot 1.8s ease-out infinite; }
+
+/* Ticker number tabular */
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Card lift */
+.lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s; }
+.lift:hover { transform: translateY(-4px) rotate(-0.3deg); }
+
+/* Button shine */
+.btn-primary { position: relative; overflow: hidden; isolation: isolate; }
+.btn-primary::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 40%, rgba(255,255,255,.55) 50%, transparent 60%);
+  transform: translateX(-120%); transition: transform .8s;
+}
+.btn-primary:hover::before { transform: translateX(120%); }
+
+/* Sticky-outline tag */
+.tag { border: 1.5px solid #0A0A0A; border-radius: 999px; padding: 6px 12px; font-weight: 600; font-size: 12px; letter-spacing: .02em; background: #FAFAF7; }
+
+/* Smaller dot bg for inset cards */
+.dots-inset {
+  background-color: #fff;
+  background-image: radial-gradient(circle at 1px 1px, rgba(10,10,10,0.10) 1px, transparent 0);
+  background-size: 14px 14px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #0A0A0A; border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
